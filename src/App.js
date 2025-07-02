@@ -10,13 +10,11 @@ function App() {
   let [cities, setCities] = useState([]);
   let [selectedcountry, setSelectedCountry] = useState([]);
   let [selectedstate, setSelectedState] = useState([]);
-  let [selectedcity, setSelectedCity] = useState([]);
+  let [, setSelectedCity] = useState([]);
   let [resString, setResString] = useState("");
 
   useEffect(() => {
-    const rawData = fetch(
-      "https://crio-location-selector.onrender.com/countries"
-    )
+    fetch("https://crio-location-selector.onrender.com/countries")
       .then((data) => data.json())
       .then((jsonData) => {
         setCountries(jsonData);
